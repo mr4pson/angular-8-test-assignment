@@ -20,6 +20,8 @@ import {
 import { PlacesService } from './services';
 import { PlacesState, AddPlaceState } from './states';
 import { MaterialModule } from 'app/material';
+import { PlaceItemDetailsComponent } from './containers/place-item-details/place-item-details.component';
+import { PlaceResolverService } from './resolvers/place.resolver';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MaterialModule } from 'app/material';
     AddDialogComponent,
     AddPlaceFormComponent,
     AddControlsComponent,
-    PlaceItemPageComponent
+    PlaceItemPageComponent,
+    PlaceItemDetailsComponent
   ],
   imports: [
     SharedModule,
@@ -42,7 +45,8 @@ import { MaterialModule } from 'app/material';
     ])
   ],
   providers: [
-    PlacesService
+    PlacesService,
+    PlaceResolverService
   ],
   entryComponents: [
     AddDialogComponent

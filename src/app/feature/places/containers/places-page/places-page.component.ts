@@ -18,9 +18,11 @@ export class PlacesPageComponent implements OnInit {
     map(state => state.places)
   );
 
-  constructor(private store: Store) { }
+  constructor(
+    private store: Store
+  ) { }
 
   ngOnInit() {
-    this.store.dispatch(actions.Load);
+    this.store.dispatch(new actions.Load);
   }
 }

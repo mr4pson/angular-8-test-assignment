@@ -7,10 +7,11 @@ import {
 } from './containers';
 
 import { HasBusinessGuard } from '@feature/shared/services';
+import { PlaceResolverService } from './resolvers/place.resolver';
 
 const routes: Routes = [
   {
-    path: ':id', component: PlaceItemPageComponent, canActivate: [HasBusinessGuard]
+    path: ':id', component: PlaceItemPageComponent, canActivate: [HasBusinessGuard], resolve: { place: PlaceResolverService } 
   },
   {
     path: '', component: PlacesPageComponent, canActivate: [HasBusinessGuard]

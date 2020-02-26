@@ -45,4 +45,13 @@ export class PlacesState {
       })
     );
   }
+  @Action(actions.Store)
+  StorePlace(ctx: StateContext<PlacesStateModel>, { payload }) {
+    const state = ctx.getState();
+
+    return ctx.setState({
+      ...state,
+      places: payload
+    });
+  }
 }
